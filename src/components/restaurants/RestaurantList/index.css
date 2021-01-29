@@ -1,0 +1,9 @@
+.restaurant-list {
+    width: 90%;
+    min-height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    margin: 5rem auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

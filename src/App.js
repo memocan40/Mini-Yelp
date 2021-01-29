@@ -6,7 +6,7 @@ import GoBackButton from "./components/GoBackButton";
 import RestaurantList from "./components/restaurants/RestaurantList";
 import RestaurantDetails from "./views/RestaurantDetails";
 import AllRestaurants from "./views/AllRestaurants";
-import Restaurantsfiltered from "./views/RestaurantsFiltered";
+import RestaurantsFiltered from "./views/RestaurantsFiltered";
 import CityFilter from "./components/filters/FilterCities";
 import TagFilter from "./components/filters/FilterTags";
 

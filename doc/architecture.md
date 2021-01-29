@@ -14,16 +14,16 @@
 
 Stored in src/components
 
-**Posts**
+**Restaurants**
 
-- _RestaurantList_ (main page)
-- _Restaurant_ (main page)
-- _RestaurantDetailed_ (post detailed page)
+- _RestaurantList_ (props: restaurants)(main page)
+- _Restaurant_ (props: one resturant) (main page)
+- _RestaurantDetailed_ (props: one restaurant) (post detailed page)
 
 **Filters**
 
-- _FilterTags_ (multiselection dropdown)
-- _FilterCities_ (multiselection dropdown)
+- _FilterTags_ (props: tags) (multiselection dropdown)
+- _FilterCities_ (props: cities) (multiselection dropdown)
 
 **Secondary components**
 
@@ -34,6 +34,6 @@ Stored in src/components
 
 Stored in src/views
 
-1. _AllRestaurants_: Route "/" and "/restaurants"
-2. _RestaurantsFiltered_: Route "/filtered"
-3. _ResturantDetails_: Route "restaurants/{resturantId}": only resturant with id = _resturantId_
+1. _AllRestaurants_ (props: restaurants): Route "/" and "/restaurants". Renders component _RestaurantList_ which renders _Restaurant_ with map.
+2. _RestaurantsFiltered_ (props: restaurants, filters to be apllied): Route "/filtered". It will filter the restaurant list and pass down the result to
+3. _ResturantDetails_ (props: restaurants): Route "restaurants/{resturantId}": it will filter the restaurants and pass down only one to component _RestaurantDetailed_

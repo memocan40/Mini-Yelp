@@ -126,7 +126,7 @@ function App() {
           <AllRestaurants restaurants={restaurants} />
         </Route>
         <Route path="/filtered">
-          <Restaurantsfiltered restaurants={restaurants} />
+          <RestaurantsFiltered restaurants={restaurants} />
         </Route>
         <Route path="/restaurants/:restaurantid">
           <RestaurantDetails restaurants={restaurants} />

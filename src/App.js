@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 import "./App.css";
-import GoBackButton from "./components/GoBackButton/Index";
+import GoBackButton from "./components/GoBackButton";
 import RestaurantList from "./components/restaurants/RestaurantList";
-import RestaurantDetails from "./views/ResturantDetails";
+import RestaurantDetails from "./views/RestaurantDetails";
 import AllRestaurants from "./views/AllRestaurants";
 import Restaurantsfiltered from "./views/RestaurantsFiltered";
 

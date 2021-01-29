@@ -18,7 +18,7 @@ Stored in src/components
 
 - _RestaurantList_ (props: restaurants)(main page)
 - _Restaurant_ (props: one resturant) (main page)
-- _RestaurantDetailed_ (props: one restaurant) (post detailed page)
+- _RestaurantDetailed_ (props: one restaurant) (restaurant detailed page)
 
 **Filters**
 

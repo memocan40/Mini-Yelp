@@ -1,4 +1,4 @@
-# Pinterest
+# Yelp clone
 
 ## Table of Contents
 

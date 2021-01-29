@@ -1,6 +1,4 @@
-
 import GoBackButton from '../../GoBackButton';
-
 
 
 export default function RestaurantDetailed({ restaurants }) {
@@ -25,8 +23,6 @@ export default function RestaurantDetailed({ restaurants }) {
             
             
           </div>
-        
-          
         </div>
       </div>
     </article>

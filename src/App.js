@@ -4,6 +4,10 @@ import axios from 'axios';
 import './App.css';
 import GoBackButton from "./components/GoBackButton/Index";
 import RestaurantList from  "./components/restaurants/RestaurantList";
+import RestaurantDetails from "./views/ResturantDetails";
+import AllRestaurants from "./views/AllRestaurants";
+import Restaurantsfiltered from "./views/RestaurantsFiltered";
+
 
 function App() {
   const restaurants = [
@@ -47,14 +51,14 @@ function App() {
       <RestaurantList restaurants={restaurants} />
     <GoBackButton/>
       <Switch>
-        <Route path="#">
-
+        <Route path="/restaurants">
+          <AllRestaurants restaurants={restaurants} />
         </Route>
-        <Route path="#">
-
+        <Route path="/filtered">
+          <Restaurantsfiltered restaurants={restaurants} />
         </Route>
-        <Route path="#">
-          
+        <Route path="/restaurants/:restaurantid">
+          <RestaurantDetails restaurants={restaurants} />
         </Route>
       </Switch>
     </div>

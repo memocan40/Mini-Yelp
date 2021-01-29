@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [States]
+- [States](#states)
 - [Components](#components)
 - [Views](#views)
 

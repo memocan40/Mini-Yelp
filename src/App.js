@@ -3,12 +3,12 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 import GoBackButton from "./components/GoBackButton/Index";
-import RestaurantList from "./components/restaurants/RestaurantList";
-import RestaurantDetails from "./views/ResturantDetails";
+import RestaurantDetails from "./views/RestaurantDetails";
 import AllRestaurants from "./views/AllRestaurants";
-import Restaurantsfiltered from "./views/RestaurantsFiltered";
+import RestaurantsFiltered from "./views/RestaurantsFiltered";
 
 function App() {
+  /*
   const restaurants = [
     {
       name: "SoulKebab",
@@ -116,22 +116,34 @@ function App() {
     { name: "Cologne", id: 5 },
     { name: "Frankfurt", id: 6 },
   ];
+  */
+
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    const restaurantsResponse = axios.get(
+      "https://agile-scrubland-91037.herokuapp.com/restaurants"
+    );
+    setRestaurants(restaurantsResponse.data);
+  }, []);
 
   return (
     <div className="App">
-      <RestaurantList restaurants={restaurants} />
       <GoBackButton />
-      <Switch>
-        <Route path="/restaurants">
-          <AllRestaurants restaurants={restaurants} />
-        </Route>
-        <Route path="/filtered">
-          <RestaurantsFiltered restaurants={restaurants} />
-        </Route>
-        <Route path="/restaurants/:restaurantid">
-          <RestaurantDetails restaurants={restaurants} />
-        </Route>
-      </Switch>
+
+      {restaurants.length ? (
+        <Switch>
+          <Route path="/restaurants">
+            <AllRestaurants restaurants={restaurants} />
+          </Route>
+          <Route path="/filtered">
+            <RestaurantsFiltered restaurants={restaurants} />
+          </Route>
+          <Route path="/restaurants/:restaurantid">
+            <RestaurantDetails restaurants={restaurants} />
+          </Route>
+        </Switch>
+      ) : null}
     </div>
   );
 }

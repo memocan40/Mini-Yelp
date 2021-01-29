@@ -1,0 +1,42 @@
+.city-filter {
+    height: 3rem;
+    width: 20rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    margin-left: 1rem;
+    background-color: rgb(100, 100, 100);
+    color: #fff;
+    font-size: 1.7rem;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+  
+.city-filter:hover .city-option {
+    opacity: 1;
+    visibility: visible;
+}
+  
+.city-option {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    height: 3.5rem;
+    min-width: 15rem;
+    padding: 1.2rem;
+    background-color: rgb(100, 100, 100);
+    align-items: center;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 0.5rem;
+    font-size: 2.3rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+.city-option:hover {
+    background-color: rgb(78, 140, 255);
+  }

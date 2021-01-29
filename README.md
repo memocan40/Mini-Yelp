@@ -5,7 +5,6 @@
 - [Description](#description)
 - [Organisation](#organisation)
 - [Design](#design)
-- [Live](#live)
 - [Programming](#programming)
 
 ## Description
@@ -22,8 +21,6 @@ These are the wireframes of our application:
 
 - [Main page](./design/wireframe_home.jpg)
 - [Main page - After Search](./design/wireframe_home_aftersearch.jpg)
-
-## Live
 
 ## Programming
 

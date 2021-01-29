@@ -1,12 +1,13 @@
 import React from "react";
+import "./index.css";
 
 import Restaurant from "../Restaurant";
 
-export default function RestaurantList({object}){
+export default function RestaurantList({restaurants}){
     return(
         <div class="restaurant-list">
             {
-                object.map((restaurant) => {
+                restaurants.map((restaurant) => {
                     return <Restaurant  object={restaurant}/>
                 })
             }

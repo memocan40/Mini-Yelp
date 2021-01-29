@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import GoBackButton from "./components/GoBackButton/Index";
-import Restaurant from "./components/restaurants/Restaurant";
-import RestaurantDetailed from "./components/restaurants/RestaurantDetailed";
-import RestaurantList from "./components/restaurants/RestaurantList";
+import RestaurantDetails from "./views/ResturantDetails";
+import AllRestaurants from "./views/AllRestaurants";
+import Restaurantsfiltered from "./views/RestaurantsFiltered";
+
+
 function App() {
-  const restaurant = [
+  const restaurants = [
     {name: "SoulKebab", id: 1, tag:['kebab', 'beer', 'turkish'], city:['Berlin'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum  dasdasdada"},
     {name: "Italiana", id: 2, tag:['pizza', 'pasta', 'wine', "italian"], city:['Hamburg'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum dadsa dad  dasd a"},
     {name: "Vegan Heaven", id: 3, tag:['vegan', 'vegetarian', 'pasta'], city:['Frankfurt'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum dasd asda da da " },
@@ -47,15 +49,15 @@ function App() {
 
     <GoBackButton/>
       <Switch>
-        <Route path="restaurants">
-        <RestaurantList/>
+        <Route path="/restaurants">
+        <AllRestaurants restaurants={restaurants}/>
 
         </Route>
         <Route path="/filtered">
-          <Restaurant/>
+          <Restaurantsfiltered/>
         </Route>
-        <Route path="/restaurants/{restaurantid}">
-          <RestaurantDetailed/>
+        <Route path='/restaurants/:restaurantid'>
+          <RestaurantDetails restaurants={restaurants} />
         </Route>
       </Switch>
     </div>

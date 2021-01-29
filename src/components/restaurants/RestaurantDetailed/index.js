@@ -1,7 +1,7 @@
 
 import GoBackButton from '../../GoBackButton';
 
-import './index.css';
+
 
 export default function RestaurantDetailed({ restaurants }) {
   return (

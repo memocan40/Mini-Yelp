@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
+import GoBackButton from "./components/GoBackButton/Index";
+import RestaurantList from  "./components/restaurants/RestaurantList";
 
 function App() {
   const restaurant = [
@@ -17,38 +18,45 @@ function App() {
     {name: "Something", id: 9, tag:['pasta', 'vegan', 'italian', "pizza"], city:['Munich'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum dsad as dasd ada"},
   ];
   const tags = [
-    {name: vegan, id:1},
-    {name: not-vegan, id:2},
-    {name: vegetarian, id:3},
-    {name: indian, id:4},
-    {name: bbq, id:5},
-    {name: beer, id:6},
-    {name: wine, id:7},
-    {name: indonesian, id:8},
-    {name: italian, id:9},
-    {name: american, id:10},
-    {name: turkish, id:10},
-    {name: pizza, id:11},
-    {name: pasta, id:12},
-    {name: burger, id:13},
+    {name: "vegan", id:1},
+    {name: "not-vegan", id:2},
+    {name: "vegetarian", id:3},
+    {name: "indian", id:4},
+    {name: "bbq", id:5},
+    {name: "beer", id:6},
+    {name: "wine", id:7},
+    {name: "indonesian", id:8},
+    {name: "italian", id:9},
+    {name: "american", id:10},
+    {name: "turkish", id:10},
+    {name: "pizza", id:11},
+    {name: "pasta", id:12},
+    {name: "burger", id:13},
   ];
   const cities = [
-    {name: Hamburg, id: 1},
-    {name: Berlin, id: 2},
-    {name: Munich, id: 3},
-    {name: Linz, id: 4},
-    {name: Cologne, id: 5},
-    {name: Frankfurt, id: 6},
+    {name: "Hamburg", id: 1},
+    {name: "Berlin", id: 2},
+    {name: "Munich", id: 3},
+    {name: "Linz", id: 4},
+    {name: "Cologne", id: 5},
+    {name: "Frankfurt", id: 6},
   ];
 
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
-      <main>
+      <RestaurantList object={restaurant} />
+    <GoBackButton/>
+      <Switch>
+        <Route path="#">
 
-      </main>
+        </Route>
+        <Route path="#">
+
+        </Route>
+        <Route path="#">
+          
+        </Route>
+      </Switch>
     </div>
   );
 }

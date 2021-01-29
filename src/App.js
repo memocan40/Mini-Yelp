@@ -7,6 +7,8 @@ import RestaurantList from "./components/restaurants/RestaurantList";
 import RestaurantDetails from "./views/RestaurantDetails";
 import AllRestaurants from "./views/AllRestaurants";
 import Restaurantsfiltered from "./views/RestaurantsFiltered";
+import CityFilter from "./components/filters/FilterCities";
+import TagFilter from "./components/filters/FilterTags";
 
 function App() {
   const restaurants = [
@@ -119,6 +121,10 @@ function App() {
 
   return (
     <div className="App">
+      <div class="filter-wrapper">
+        <CityFilter cities={cities} />
+        <TagFilter tags={tags} />
+      </div>
       <RestaurantList restaurants={restaurants} />
       <GoBackButton />
       <Switch>

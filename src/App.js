@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-//import axios from "axios";
+import axios from "axios";
 import "./App.css";
 import GoBackButton from "./components/GoBackButton";
 import RestaurantList from "./components/restaurants/RestaurantList";
@@ -11,6 +11,7 @@ import CityFilter from "./components/filters/FilterCities";
 import TagFilter from "./components/filters/FilterTags";
 
 function App() {
+  /*
   const restaurants = [
     {
       name: "SoulKebab",
@@ -118,26 +119,39 @@ function App() {
     { name: "Cologne", id: 5 },
     { name: "Frankfurt", id: 6 },
   ];
+  */
 
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    const doRequests = async () => {
+      const restaurantsResponse = await axios.get(
+        "https://agile-scrubland-91037.herokuapp.com/restaurants"
+      );
+      setRestaurants(restaurantsResponse.data);
+      }
+    doRequests();
+  }, []);
+    
+ 
   return (
     <div className="App">
       <div class="filter-wrapper">
-        <CityFilter cities={cities} />
-        <TagFilter tags={tags} />
+      
       </div>
-      <RestaurantList restaurants={restaurants} />
-      <GoBackButton />
-      <Switch>
-        <Route path="/restaurants">
-          <AllRestaurants restaurants={restaurants} />
-        </Route>
-        <Route path="/filtered">
-          <RestaurantsFiltered restaurants={restaurants} />
-        </Route>
-        <Route path="/restaurants/:restaurantid">
-          <RestaurantDetails restaurants={restaurants} />
-        </Route>
-      </Switch>
+      {restaurants.length ? (
+        <Switch>
+          <Route path="/">
+            <AllRestaurants restaurants={restaurants} />
+          </Route>
+          <Route path="/filtered">
+            <RestaurantsFiltered restaurants={restaurants} />
+          </Route>
+          <Route path="/restaurants/:restaurantid">
+            <RestaurantDetails restaurants={restaurants} />
+          </Route>
+        </Switch>
+      ) : null}
     </div>
   );
 }

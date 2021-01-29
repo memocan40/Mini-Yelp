@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
-import GoBackButton from "./components/GoBackButton/Index"
+import GoBackButton from "./components/GoBackButton/Index";
+import Restaurant from "./components/restaurants/Restaurant";
+import RestaurantDetailed from "./components/restaurants/RestaurantDetailed";
+import RestaurantList from "./components/restaurants/RestaurantList";
 function App() {
   const restaurant = [
     {name: "SoulKebab", id: 1, tag:['kebab', 'beer', 'turkish'], city:['Berlin'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum  dasdasdada"},
@@ -44,14 +47,15 @@ function App() {
 
     <GoBackButton/>
       <Switch>
-        <Route path="#">
+        <Route path="restaurants">
+        <RestaurantList/>
 
         </Route>
-        <Route path="#">
-
+        <Route path="/filtered">
+          <Restaurant/>
         </Route>
-        <Route path="#">
-          
+        <Route path="/restaurants/{restaurantid}">
+          <RestaurantDetailed/>
         </Route>
       </Switch>
     </div>

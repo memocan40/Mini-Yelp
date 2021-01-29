@@ -3,14 +3,14 @@ import React from "react";
 import "./index.css";
 
 export default function Restaurant({ object }) {
-  return <div key={`restaurant${object.id}`} class="restaurant-wrapper">
+  return <div key={`restaurant${object._id}`} class="restaurant-wrapper">
             <div class="restaurant-img-wrapper">
-              <img class="restaurant-img" src={`${object.img}`} alt={`${object.name}`}/>
+              <img class="restaurant-img" src={`${object.Img_url}`} alt={`${object.Name}`}/>
             </div>
-            <h3 class="restaurant-title">{`${object.name}`}</h3>
+            <h3 class="restaurant-title">{`${object.Name}`}</h3>
             <div class="restaurant-tag-wrapper">
-              {object.tag.map((tag) => {
-                return <div class="restaurant-tag">{tag}</div>
+              {object.tags.map((tag) => {
+                return <div class="restaurant-tag">{tag.Name}</div>
               })}
             </div>
         </div>

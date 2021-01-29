@@ -122,22 +122,36 @@ function App() {
   */
 
   const [restaurants, setRestaurants] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [cities, setCities] = useState([]);
 
   useEffect(() => {
     const doRequests = async () => {
       const restaurantsResponse = await axios.get(
         "https://agile-scrubland-91037.herokuapp.com/restaurants"
       );
-      setRestaurants(restaurantsResponse.data);
+      const citiesResponse = await axios.get(
+        "https://agile-scrubland-91037.herokuapp.com/cities"
+      );
+      const tagsResponse = await axios.get(
+        "https://agile-scrubland-91037.herokuapp.com/tags"
+      );
+
+      setRestaurants(restaurantsResponse.data.data);
+      setTags(tagsResponse.data.data);
+      setCities(citiesResponse.data.data);
       }
     doRequests();
   }, []);
-    
+  console.log(restaurants)
+  console.log(tags);
+  console.log(cities);
  
   return (
     <div className="App">
       <div class="filter-wrapper">
-      
+        <CityFilter cities={cities}/>
+        <TagFilter tags={tags}/>
       </div>
       {restaurants.length ? (
         <Switch>

@@ -8,8 +8,8 @@ export default function CityFilter({ cities }) {
     <div class="city-filter">
       {cities.map((city) => {
         return (
-          <Link className="city-option" key={city.id} to={`/filtered/city/${city.id}`}>
-            {city.name}
+          <Link className="city-option" key={city._id} to={`/filtered/city/${city._id}`}>
+            {city.Name}
           </Link>
         );
       })}

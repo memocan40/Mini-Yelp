@@ -8,8 +8,8 @@ export default function TagFilter({ tags }) {
     <div class="tag-filter">
       {tags.map((tag) => {
         return (
-          <Link className="tag-option" key={tag.id} to={`/filtered/tag/${tag.id}`}>
-            {tag.name}
+          <Link className="tag-option" key={tag._id} to={`/filtered/tag/${tag._id}`}>
+            {tag.Name}
           </Link>
         );
       })}

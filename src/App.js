@@ -1,6 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+import GoBackButton from "./components/GoBackButton/Index"
 function App() {
   const restaurant = [
     {name: "SoulKebab", id: 1, tag:['kebab', 'beer', 'turkish'], city:['Berlin'], img: "https://i.picsum.photos/id/292/600/500.jpg?hmac=rMEBB27JSpAEI1jAM8TtaXvQXIZmfZHZIGm3SQPLFLQ", description: "LoremIpsum  dasdasdada"},
@@ -40,20 +41,19 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <GoBackButton/>
+      <Switch>
+        <Route path="#">
+
+        </Route>
+        <Route path="#">
+
+        </Route>
+        <Route path="#">
+          
+        </Route>
+      </Switch>
     </div>
   );
 }
